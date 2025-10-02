@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini E-Learning Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="notifications-container"></div>
+    <div class="container">
+        <!-- Login Page -->
+        <div id="login-page" class="page active">
+            <div class="login-form">
+                <h2>Welcome! Please Log In</h2>
+                <input type="text" id="username-input" placeholder="Enter your username" required>
+                <button onclick="loginUser()">Login</button>
+                <p id="login-error" style="color: red; display: none;">Username must be at least 3 characters.</p>
+            </div>
+        </div>
+
+        <header id="header" style="display: none;">
+            <h1>Mini E-Learning Platform</h1>
+            <div id="profile-section" class="profile-section">
+                <h3 id="profile-username">Your Profile</h3>
+                <p>Total Points: <span id="total-points">0</span></p>
+                <p>Level: <span id="user-level">1</span></p>
+                <p>Streak: <span id="user-streak">0</span> days</p>
+                <button onclick="showLeaderboard()" class="leaderboard-btn">View Leaderboard</button>
+                <div id="badges-list" class="badges-list">
+                    <!-- Badges will be populated by JS -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Leaderboard Page -->
+        <div id="leaderboard-page" class="page" style="display: none;">
+            <button class="back-btn" onclick="showHome()">← Back to Home</button>
+            <div id="leaderboard-content">
+                <!-- Leaderboard will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Home Page -->
+        <div id="home-page" class="home-page page" style="display: none;">
+            <div class="course-list" id="course-list">
+                <!-- Courses will be populated by JS -->
+            </div>
+        </div>
+
+        <!-- Course Detail Page -->
+        <div id="course-detail" class="course-detail page" style="display: none;">
+            <button class="back-btn" onclick="showHome()">← Back to Courses</button>
+            <div id="course-detail-content">
+                <!-- Course details will be populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
